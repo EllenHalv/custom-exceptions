@@ -1,6 +1,7 @@
 package org.example.exception;
 
-public class InvalidTemperatureException extends RuntimeException {
+// Extend the closest appropriate class
+public class InvalidTemperatureException extends IllegalArgumentException {
     public InvalidTemperatureException(String message) {
         super(message);
     }

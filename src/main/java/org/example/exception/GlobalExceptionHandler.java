@@ -16,10 +16,10 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleSNMPRequestException(InvalidTemperatureException e) {
         ErrorResponse errorResponse = new ErrorResponse(
                 LocalDateTime.now(),
-                HttpStatus.BAD_GATEWAY.value(),
-                HttpStatus.BAD_GATEWAY.getReasonPhrase(),
+                HttpStatus.BAD_REQUEST.value(), // Set the status code
+                HttpStatus.BAD_REQUEST.getReasonPhrase(), // Set the reason phrase
                 e.getMessage()
         );
-        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_GATEWAY);
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 }

@@ -1,2 +1,3 @@
-[] implement custom exceptions
+[X] implement custom exceptions
+[] implement code where exception can occur
 [] create tests for custom exceptions
