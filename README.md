@@ -32,6 +32,7 @@ This example project demonstrates how to use custom exceptions to:
    ```
 
 ### Exception Example
+Let's pretend this application is used to set the temperature of a thermostat. We don't want to allow the temperature to be set under 5 degrees Celsius or over 35 degrees Celsius.
 
 #### In the service, we throw this exception when an invalid temperature is entered:
 ```java
