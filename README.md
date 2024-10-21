@@ -7,3 +7,10 @@ This example project shows how to use custom exceptions to:
 - Customize what types of exceptions can be thrown
 - Make your code base cleaner by separating it from the error handling logic
 - Handle exceptions globally using a 'GlobalExceptionHandler'
+
+### Success example in Postman
+<img src="src/main/resources/images/postman-success-example.png" alt="">
+
+### Custom exception example in Postman
+<img src="src/main/resources/images/postman-exception-example.png" alt="">
+
