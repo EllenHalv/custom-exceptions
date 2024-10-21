@@ -8,12 +8,6 @@ This example project demonstrates how to use custom exceptions to:
 - Make your code base cleaner by separating business logic from error handling
 - Handle exceptions globally using a 'GlobalExceptionHandler' class
 
-### Success example in Postman
-<img src="src/main/resources/images/postman-success-example.png" alt="">
-
-### Custom exception example in Postman
-<img src="src/main/resources/images/postman-exception-example.png" alt="">
-
 ### Getting Started
 
 1. **Clone the repository**:
@@ -34,6 +28,16 @@ This example project demonstrates how to use custom exceptions to:
 ### Exception Example
 Let's pretend this application is used to set the temperature of a thermostat. We don't want to allow the temperature to be set under 5 degrees Celsius or over 35 degrees Celsius.
 
+#### Here’s an example of a simple custom exception for invalid temperatures:
+```java
+// Extend the closest appropriate class
+public class InvalidTemperatureException extends IllegalArgumentException {
+    public InvalidTemperatureException(String message) {
+        super(message);
+    }
+}
+```
+
 #### In the service, we throw this exception when an invalid temperature is entered:
 ```java
 @Service
@@ -44,16 +48,6 @@ public class TemperatureService {
             throw new InvalidTemperatureException("Invalid temperature: " + temperature);
         }
         return "Temperature set to " + temperature;
-    }
-}
-```
-
-#### Here’s an example of a simple custom exception in this project:
-```java
-// Extend the closest appropriate class
-public class InvalidTemperatureException extends IllegalArgumentException {
-    public InvalidTemperatureException(String message) {
-        super(message);
     }
 }
 ```
@@ -94,3 +88,13 @@ public class ErrorResponse {
     }
 }
 ```
+
+### Success example in Postman
+If the entered temperature is within our desired range the response will look like this:
+
+<img src="src/main/resources/images/postman-success-example.png" alt="">
+
+### Custom exception example in Postman
+If the entered temperature is not within our desired range the custom exception will be thrown and the response will look like this:
+
+<img src="src/main/resources/images/postman-exception-example.png" alt="">
