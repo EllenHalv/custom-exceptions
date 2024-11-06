@@ -1,4 +1,4 @@
 [X] implement custom exceptions
 [X] implement code where exception can occur
-[] create tests for custom exceptions
+[X] create tests for custom exceptions
 [X] create rest api to handle exception
